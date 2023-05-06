@@ -15,11 +15,12 @@
                 background-color: lightblue;
             }
         </style>
-
+ 
+        <script src="apiRequestToGenerateQuestions.js"></script>
         <script>
 
-            function generateBtnClicked(){
-                document.getElementById("output").innerHTML = document.getElementById("input").value;
+            const generateBtnClicked = async() => {
+                document.getElementById("output").innerHTML = await apiRequestToGenerateQuestions(document.getElementById("input").value);
             }
 
         </script>
