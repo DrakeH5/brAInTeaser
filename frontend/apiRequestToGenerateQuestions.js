@@ -12,6 +12,7 @@ const apiRequestToGenerateQuestions = async(input) => {
     })
         .then((response) => response.json())
             .then((json) => {
+                console.log(json)
                 questions = json;
             });
     return questions;
