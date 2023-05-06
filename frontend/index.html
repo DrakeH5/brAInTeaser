@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>brAIn Teaser</title>
+    </head>
+    <body>
+        <center>
+            <textarea id="input"></textarea> 
+            <button onclick="generateBtnClicked()">Generate</button>
+            <h3>Questions: </h3>
+            <p id="output"></p>
+        </center>
+
+        <style>
+            body {
+                background-color: lightblue;
+            }
+        </style>
+
+        <script>
+
+            function generateBtnClicked(){
+                document.getElementById("output").innerHTML = document.getElementById("input").value;
+            }
+
+        </script>
+
+    </body>
+</html>
