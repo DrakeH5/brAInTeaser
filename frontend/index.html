@@ -19,8 +19,21 @@
         <script src="apiRequestToGenerateQuestions.js"></script>
         <script>
 
+            function showAnswer(id){
+                document.getElementById(id).style.display = "block"
+            }
+
+            function generateQuestionHTML(question, answer, id){
+                return "<div onclick=showAnswer("+id+")>" + question + "</div>" + "<div style='display: none' id="+id+">"+answer+"</div>" + "<br>";
+            }
+
             const generateBtnClicked = async() => {
-                document.getElementById("output").innerHTML = await apiRequestToGenerateQuestions(document.getElementById("input").value);
+                response = await apiRequestToGenerateQuestions(document.getElementById("input").value);
+                questions = response[0]
+                answers = response[1]
+                for(var i=0; i<questions.length; i++){
+                    document.getElementById("output").innerHTML += generateQuestionHTML(questions[i], answers[i], i);
+                }
             }
 
         </script>

@@ -26,13 +26,16 @@ def generateQuestions():
     #scored = r.get_ranked_phrases()
     sentences = re.split('[^0-9]["."][^0-9]', input)
     questions = []
+    answers = []
     for sent in sentences: 
         blob = TextBlob(sent)
-        questions.append(sent.lower().replace(blob.noun_phrases[0], "___"))
+        answer = blob.noun_phrases[0]
+        answers.append(answer)
+        questions.append(sent.lower().replace(answer, "___"))
         #r.extract_keywords_from_text(sent)
         #questions.append(sent.lower().replace(r.get_ranked_phrases()[0], "___"))
-    print(questions)
-    return [questions]
+    #print(questions)
+    return [questions, answers]
     #return [input]
 
 if __name__ == "__main__":
