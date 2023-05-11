@@ -5,11 +5,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body> 
         <div id="binder">
             <div class="paper">
                 <textarea id="input">Notes: </textarea> 
-                <button onclick="generateBtnClicked()">Generate</button>
+                <button onclick="generateBtnClicked()" id="generateBtn">Generate</button>
                 <p id="output"></p>
             </div>
             <div class="paper" id="answers">
@@ -78,6 +78,17 @@
                 linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
                 linear-gradient(#eee .1em, transparent .1em);
                 background-size: 100% 1.3em;
+            }
+            #generateBtn{
+                font: normal 2em 'Caveat';
+                background-color: transparent;
+                position: absolute;
+                top: 83%;
+                right: 10;
+                rotate: -20deg;
+                border: 20px solid transparent;
+                border-image: url("squiggllyline.png") 120 round;
+                color: black;
             }
         </style>
  
