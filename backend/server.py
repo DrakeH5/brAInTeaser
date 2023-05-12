@@ -24,9 +24,6 @@ def generateQuestions():
     #print (input)
     #r.extract_keywords_from_text(input)
     #scored = r.get_ranked_phrases()
-    if input[:6] == "Notes:": 
-        input = input[6:]
-    print(input)
     sentences = re.split('[^0-9]["."][^0-9]', input)
     questions = []
     answers = []

@@ -89,6 +89,9 @@
                 
                 color: black;
             }
+            #input {
+                white-space: pre;
+            }
         </style>
  
         <script src="apiRequestToGenerateQuestions.js"></script>
@@ -107,7 +110,13 @@
             }
 
             const generateBtnClicked = async() => {
-                response = await apiRequestToGenerateQuestions(document.getElementById("input").value);
+                input = document.getElementById("input").value;
+                if(input.substring(0, 6) == "Notes:"){
+                    input = input.substring(7, input.length-1)
+                }
+                input = input.split('\n').join(".")
+                console.log(input)
+                response = await apiRequestToGenerateQuestions(input);
                 questions = response[0]
                 answers = response[1]
                 for(var i=0; i<questions.length; i++){
